@@ -5,6 +5,8 @@ import ru.avacodo.lifehackstudiotesttask.data.remote.dto.CompanyShortDto
 import ru.avacodo.lifehackstudiotesttask.domain.model.CompanyDetailsDomain
 import ru.avacodo.lifehackstudiotesttask.domain.model.CompanyShortDomain
 
+private const val EMPTY_DATA = "не указан"
+
 class ModelMapper {
     fun mapCompanyShortDtoToDomain(companyShortDto: CompanyShortDto): CompanyShortDomain {
         return with(companyShortDto) {
@@ -25,8 +27,8 @@ class ModelMapper {
                 description = description,
                 lat = lat,
                 lon = lon,
-                siteUrl = www,
-                phone = phone
+                siteUrl = www.ifEmpty { EMPTY_DATA },
+                phone = phone.ifEmpty { EMPTY_DATA }
             )
         }
     }

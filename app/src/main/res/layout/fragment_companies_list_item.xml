@@ -16,7 +16,7 @@
             android:id="@+id/company_item_logo_image_view"
             android:layout_width="@dimen/zero_value"
             android:layout_height="@dimen/zero_value"
-            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintDimensionRatio="H, 4: 3"
             app:layout_constraintStart_toStartOf="parent"

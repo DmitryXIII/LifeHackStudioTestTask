@@ -3,4 +3,6 @@
     <dimen name="zero_value">0dp</dimen>
     <dimen name="default_padding">4dp</dimen>
     <dimen name="company_item_heigth">100dp</dimen>
+    <dimen name="default_corner_radius">10dp</dimen>
+    <dimen name="details_company_name_padding">10dp</dimen>
 </resources>

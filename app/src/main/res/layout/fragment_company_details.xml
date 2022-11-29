@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:scrollbars="none">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,7 +40,10 @@
             android:id="@+id/company_details_name_text_view"
             android:layout_width="@dimen/zero_value"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_padding"
+            android:background="@drawable/company_name_bg"
             android:maxLines="3"
+            android:paddingHorizontal="@dimen/details_company_name_padding"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             android:textColor="@color/white_85"
             app:layout_constraintBottom_toBottomOf="@id/company_details_image_view"

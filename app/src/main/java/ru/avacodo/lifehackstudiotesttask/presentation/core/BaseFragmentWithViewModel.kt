@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.viewbinding.ViewBinding
+import com.google.android.material.snackbar.Snackbar
 
 abstract class BaseFragmentWithViewModel<VB : ViewBinding, ResultType>(
     inflateBinding: (
@@ -31,6 +32,7 @@ abstract class BaseFragmentWithViewModel<VB : ViewBinding, ResultType>(
     }
 
     override fun onErrorAction(error: String) {
+        Snackbar.make(binding.root, error, Snackbar.LENGTH_SHORT).show()
         onEndLoading()
     }
 

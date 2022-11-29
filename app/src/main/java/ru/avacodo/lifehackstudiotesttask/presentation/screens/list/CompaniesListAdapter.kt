@@ -10,6 +10,7 @@ import coil.load
 import ru.avacodo.lifehackstudiotesttask.databinding.FragmentCompaniesListItemBinding
 import ru.avacodo.lifehackstudiotesttask.domain.model.CompanyShortDomain
 import ru.avacodo.lifehackstudiotesttask.presentation.core.DiffUtilCallback
+import ru.avacodo.lifehackstudiotesttask.presentation.loadImage
 
 class CompaniesListAdapter(private val onClickAction: (id: String) -> Unit) :
     RecyclerView.Adapter<CompaniesListAdapter.CompaniesListViewHolder>() {
@@ -40,7 +41,7 @@ class CompaniesListAdapter(private val onClickAction: (id: String) -> Unit) :
     inner class CompaniesListViewHolder(view: View) : ViewHolder(view) {
         fun bind(company: CompanyShortDomain) {
             FragmentCompaniesListItemBinding.bind(itemView).apply {
-                companyItemLogoImageView.load(company.logoUrl)
+                companyItemLogoImageView.loadImage(company.logoUrl)
                 companyNameTextView.text = company.name
             }
             itemView.setOnClickListener {

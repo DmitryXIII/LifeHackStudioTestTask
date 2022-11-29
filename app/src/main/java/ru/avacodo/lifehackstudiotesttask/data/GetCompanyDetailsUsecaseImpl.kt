@@ -1,5 +1,6 @@
-package ru.avacodo.lifehackstudiotesttask.data.remote
+package ru.avacodo.lifehackstudiotesttask.data
 
+import ru.avacodo.lifehackstudiotesttask.data.remote.CompaniesRepository
 import ru.avacodo.lifehackstudiotesttask.domain.lifeHackError
 import ru.avacodo.lifehackstudiotesttask.domain.model.CompanyDetailsDomain
 import ru.avacodo.lifehackstudiotesttask.domain.servererror.LifeHakeErrorBase

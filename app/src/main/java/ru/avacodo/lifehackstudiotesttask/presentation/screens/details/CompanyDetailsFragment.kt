@@ -7,6 +7,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.avacodo.lifehackstudiotesttask.databinding.FragmentCompanyDetailsBinding
 import ru.avacodo.lifehackstudiotesttask.domain.model.CompanyDetailsDomain
 import ru.avacodo.lifehackstudiotesttask.presentation.core.BaseFragmentWithViewModel
+import ru.avacodo.lifehackstudiotesttask.presentation.loadImage
 
 private const val COMPANY_ID_ARG_KEY = "COMPANY_ID_ARG_KEY"
 
@@ -24,6 +25,17 @@ class CompanyDetailsFragment :
                     viewModel.getCompanyDetails(companyId)
                 }
             }
+        }
+    }
+
+    override fun onSuccessAction(result: CompanyDetailsDomain) {
+        super.onSuccessAction(result)
+        with(binding) {
+            companyDetailsImageView.loadImage(result.logoUrl, false)
+            companyDetailsDescriptionTextView.text = result.description
+            companyDetailsNameTextView.text = result.name
+            companyDetailsPhoneTextView.text = result.phone
+            companyDetailsUrlTextView.text = result.siteUrl
         }
     }
 
