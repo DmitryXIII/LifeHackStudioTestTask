@@ -1,7 +1,7 @@
 package ru.avacodo.lifehackstudiotesttask.domain.model
 
 data class CompanyShortDomain(
-    val id: Int,
+    val id: String,
     val name: String,
     val logoUrl: String,
 )
