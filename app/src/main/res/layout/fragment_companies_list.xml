@@ -10,4 +10,10 @@
         android:layout_height="match_parent"
         tools:itemCount="5"
         tools:listitem="@layout/fragment_companies_list_item" />
+
+    <ProgressBar
+        android:id="@+id/companies_list_progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 </FrameLayout>

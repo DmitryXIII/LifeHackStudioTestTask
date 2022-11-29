@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LifehackStudioTestTask</string>
+    <string name="phone_header">телефон:</string>
+    <string name="url_header">сайт:</string>
 </resources>

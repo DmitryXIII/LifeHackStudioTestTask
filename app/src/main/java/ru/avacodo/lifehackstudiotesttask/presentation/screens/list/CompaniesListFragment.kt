@@ -12,6 +12,7 @@ class CompaniesListFragment :
     BaseFragmentWithViewModel<FragmentCompaniesListBinding, List<CompanyShortDomain>>(
         FragmentCompaniesListBinding::inflate) {
     override val viewModel by viewModel<CompaniesListViewModel>()
+    override val progressBar by lazy { binding.companiesListProgressBar }
 
     private val companiesListAdapter = CompaniesListAdapter { companyId ->
         navigator.showCompanyDetailsFragment(companyId)
