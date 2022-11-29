@@ -17,6 +17,7 @@ abstract class BaseViewModel<ResultType> : ViewModel() {
     }
 
     protected fun execute(block: (scope: CoroutineScope) -> Unit) {
+        resultState.postValue(AppState.Loading())
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             block.invoke(this)
         }

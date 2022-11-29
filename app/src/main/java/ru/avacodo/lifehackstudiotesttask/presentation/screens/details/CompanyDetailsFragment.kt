@@ -1,15 +1,20 @@
 package ru.avacodo.lifehackstudiotesttask.presentation.screens.details
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ru.avacodo.lifehackstudiotesttask.R
 import ru.avacodo.lifehackstudiotesttask.databinding.FragmentCompanyDetailsBinding
 import ru.avacodo.lifehackstudiotesttask.domain.model.CompanyDetailsDomain
 import ru.avacodo.lifehackstudiotesttask.presentation.core.BaseFragmentWithViewModel
 import ru.avacodo.lifehackstudiotesttask.presentation.loadImage
 
 private const val COMPANY_ID_ARG_KEY = "COMPANY_ID_ARG_KEY"
+private const val EMPTY_COORDS_VALUE = 0.0
 
 class CompanyDetailsFragment :
     BaseFragmentWithViewModel<FragmentCompanyDetailsBinding, CompanyDetailsDomain>(
@@ -36,6 +41,24 @@ class CompanyDetailsFragment :
             companyDetailsNameTextView.text = result.name
             companyDetailsPhoneTextView.text = result.phone
             companyDetailsUrlTextView.text = result.siteUrl
+            initLocationCard(result)
+            companyDetailsLayout.isVisible = true
+        }
+    }
+
+    private fun initLocationCard(result: CompanyDetailsDomain) {
+        binding.companyDetailsLocationCard.apply {
+            isVisible = (result.lon != EMPTY_COORDS_VALUE && result.lat != EMPTY_COORDS_VALUE)
+            setOnClickListener {
+                startActivity(Intent().apply {
+                    action = Intent.ACTION_VIEW
+                    data = Uri.parse(getString(
+                        R.string.maps_uri,
+                        result.lat.toString(),
+                        result.lon.toString(),
+                        result.name))
+                })
+            }
         }
     }
 
