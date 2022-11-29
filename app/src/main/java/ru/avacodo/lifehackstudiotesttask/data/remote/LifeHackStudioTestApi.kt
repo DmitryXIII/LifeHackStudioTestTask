@@ -13,6 +13,6 @@ interface LifeHackStudioTestApi {
 
     @GET("test_task/test.php")
     fun getCompanyDetailsAsync(
-        @Query("id") companyId: String
+        @Query("id") companyId: String,
     ): Deferred<List<CompanyDetailsDto>>
 }

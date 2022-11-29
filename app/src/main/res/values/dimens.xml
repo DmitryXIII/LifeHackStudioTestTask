@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="zero_value">0dp</dimen>
+    <dimen name="default_padding">4dp</dimen>
+    <dimen name="company_item_heigth">100dp</dimen>
+</resources>

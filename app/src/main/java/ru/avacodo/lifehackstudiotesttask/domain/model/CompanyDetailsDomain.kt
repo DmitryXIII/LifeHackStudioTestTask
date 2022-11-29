@@ -8,5 +8,5 @@ data class CompanyDetailsDomain(
     val lat: Double,
     val lon: Double,
     val siteUrl: String,
-    val phone: String
+    val phone: String,
 )

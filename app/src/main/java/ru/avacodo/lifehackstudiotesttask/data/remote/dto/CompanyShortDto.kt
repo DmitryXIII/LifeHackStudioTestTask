@@ -8,5 +8,5 @@ data class CompanyShortDto(
     @SerializedName("img")
     val img: String,
     @SerializedName("name")
-    val name: String
+    val name: String,
 )
