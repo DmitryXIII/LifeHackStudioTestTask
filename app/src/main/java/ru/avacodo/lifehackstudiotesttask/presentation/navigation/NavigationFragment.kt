@@ -28,16 +28,24 @@ class NavigationFragment :
     }
 
     override fun showCompanyDetailsFragment(companyId: String) {
-        navigateToDestination(CompanyDetailsFragment.newInstance(companyId), true)
+        navigateToDestination(
+            destination = CompanyDetailsFragment.newInstance(companyId),
+            isRequiredToAddToBackStack = true,
+            isAddTransactionRequired = true)
     }
 
     private fun navigateToDestination(
         destination: Fragment,
         isRequiredToAddToBackStack: Boolean = false,
+        isAddTransactionRequired: Boolean = false,
     ) {
         parentFragmentManager
             .beginTransaction().apply {
-                replace(R.id.navigation_container, destination)
+                if (isAddTransactionRequired) {
+                    add(R.id.navigation_container, destination)
+                } else {
+                    replace(R.id.navigation_container, destination)
+                }
                 if (isRequiredToAddToBackStack) {
                     addToBackStack(DEFAULT_BACKSTACK_NAME)
                 }
