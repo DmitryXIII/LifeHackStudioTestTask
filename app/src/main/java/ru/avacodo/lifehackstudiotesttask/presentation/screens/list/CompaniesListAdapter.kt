@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import coil.load
 import ru.avacodo.lifehackstudiotesttask.databinding.FragmentCompaniesListItemBinding
 import ru.avacodo.lifehackstudiotesttask.domain.model.CompanyShortDomain
 import ru.avacodo.lifehackstudiotesttask.presentation.core.DiffUtilCallback

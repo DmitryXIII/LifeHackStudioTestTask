@@ -8,12 +8,21 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import ru.avacodo.lifehackstudiotesttask.domain.servererror.LifeHackServerError
+
+private const val DEFAULT_ERROR_MESSAGE = "500: Ошибка на стороне сервера"
 
 abstract class BaseViewModel<ResultType> : ViewModel() {
     protected val resultState = MutableLiveData<AppState<ResultType>>()
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
-        resultState.postValue(AppState.Error(throwable.message.toString()))
+        resultState.postValue(AppState.Error(
+            if (throwable is LifeHackServerError) {
+                throwable.message
+            } else {
+                DEFAULT_ERROR_MESSAGE
+            }
+        ))
     }
 
     protected fun execute(block: (scope: CoroutineScope) -> Unit) {
