@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/details_card_corner_radius"
+    app:layout_constraintEnd_toEndOf="@id/company_details_end_guideline"
+    app:layout_constraintStart_toStartOf="@id/company_details_begin_guideline"
+    app:layout_constraintTop_toTopOf="@id/company_details_space"
+    app:layout_constraintWidth_percent="0.95">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/details_card_corner_radius">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/company_details_location_card"
+            android:layout_width="@dimen/location_button_size"
+            android:layout_height="@dimen/location_button_size"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_location"
+                app:tint="@color/location_icon"
+                tools:ignore="ContentDescription" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/company_details_name_text_view"
+            android:layout_width="@dimen/zero_value"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintEnd_toStartOf="@id/company_details_location_card"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="lorem" />
+
+        <ImageView
+            android:id="@+id/company_details_phone_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/divider_space"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/company_details_name_text_view"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/company_details_phone_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_padding"
+            app:layout_constraintBottom_toBottomOf="@id/company_details_phone_image_view"
+            app:layout_constraintStart_toEndOf="@id/company_details_phone_image_view"
+            app:layout_constraintTop_toTopOf="@id/company_details_phone_image_view"
+            tools:text="@tools:sample/lorem" />
+
+        <ImageView
+            android:id="@+id/company_details_url_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_web"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/company_details_phone_image_view"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/company_details_url_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_padding"
+            app:layout_constraintBottom_toBottomOf="@id/company_details_url_image_view"
+            app:layout_constraintStart_toEndOf="@id/company_details_url_image_view"
+            app:layout_constraintTop_toTopOf="@id/company_details_url_image_view"
+            tools:text="@tools:sample/lorem" />
+
+        <TextView
+            android:id="@+id/company_details_description_text_view"
+            android:layout_width="@dimen/zero_value"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/divider_space"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/company_details_url_image_view"
+            tools:text="@tools:sample/lorem" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

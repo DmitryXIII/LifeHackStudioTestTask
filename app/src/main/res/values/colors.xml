@@ -9,4 +9,5 @@
     <color name="black_85">#D9000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="white_85">#D9FFFFFF</color>
+    <color name="location_icon">#E53935</color>
 </resources>

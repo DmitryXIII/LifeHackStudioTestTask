@@ -37,17 +37,17 @@ class CompanyDetailsFragment :
         super.onSuccessAction(result)
         with(binding) {
             companyDetailsImageView.loadImage(result.logoUrl, false)
-            companyDetailsDescriptionTextView.text = result.description
-            companyDetailsNameTextView.text = result.name
-            companyDetailsPhoneTextView.text = result.phone
-            companyDetailsUrlTextView.text = result.siteUrl
+            companyDetailsCardLayout.companyDetailsDescriptionTextView.text = result.description
+            companyDetailsCardLayout.companyDetailsNameTextView.text = result.name
+            companyDetailsCardLayout.companyDetailsPhoneTextView.text = result.phone
+            companyDetailsCardLayout.companyDetailsUrlTextView.text = result.siteUrl
             initLocationCard(result)
             companyDetailsLayout.isVisible = true
         }
     }
 
     private fun initLocationCard(result: CompanyDetailsDomain) {
-        binding.companyDetailsLocationCard.apply {
+        binding.companyDetailsCardLayout.companyDetailsLocationCard.apply {
             isVisible = (result.lon != EMPTY_COORDS_VALUE && result.lat != EMPTY_COORDS_VALUE)
             setOnClickListener {
                 startActivity(Intent().apply {

@@ -5,4 +5,7 @@
     <dimen name="company_item_heigth">100dp</dimen>
     <dimen name="default_corner_radius">10dp</dimen>
     <dimen name="details_company_name_padding">10dp</dimen>
+    <dimen name="divider_space">8dp</dimen>
+    <dimen name="details_card_corner_radius">20dp</dimen>
+    <dimen name="location_button_size">30dp</dimen>
 </resources>
